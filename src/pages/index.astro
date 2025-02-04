@@ -2,6 +2,7 @@
 import Welcome from "../components/Welcome.astro";
 import Layout from "../layouts/Layout.astro";
 import PokemonList from "../components/PokemonList.jsx";
+import Pokemon from "./pokemon.astro";
 import "../styles/global.css";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,5 +10,6 @@ import "../styles/global.css";
 ---
 
 <Layout>
+	<Pokemon />
 	<PokemonList client:load />
 </Layout>

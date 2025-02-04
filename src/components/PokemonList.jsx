@@ -8,17 +8,23 @@ const PokemonList = () => {
 
     useEffect(() => {
         async function fetchData(id) {
-            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-            const data = await response.json();
-            console.log(data);
-            if (data) setPokemon([...pokemon,
-            {
-                id: data.id,
-                name: data.name,
-                height: data.height,
-                weight: data.weight,
-                image: data.sprites.front_default
-            }]);
+            try {
+                const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+                const data = await response.json();
+                console.log(data);
+                if (data) setPokemon(prevPokemon => [
+                    ...prevPokemon,
+                    {
+                        id: data.id,
+                        name: data.name,
+                        height: data.height,
+                        weight: data.weight,
+                        image: data.sprites.front_default
+                    }
+                ]);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
         }
         fetchData(count);
     }, [count]);
