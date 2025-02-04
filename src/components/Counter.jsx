@@ -1,13 +1,11 @@
-const Counter = () => {
-    async function Consulta() {
-        // const response = await fetch("https://pokeapi.co/api/v2/generation/1");
-        // const data = await response.json();
-        // console.log(data);
-    }
-    Consulta();
+const Counter = (props) => {
+    const { count, setCount } = props;
 
     return (
-        <h1>Hola</h1>
+        <div>
+            <h2>Contador Pokemon: {count}</h2>
+            <button type="button" className="" onClick={() => setCount(count+1)}>Siguiente</button>
+        </div>
     );
 }
 
