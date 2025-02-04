@@ -2,6 +2,14 @@
 import PokemonList from "../components/PokemonList";
 ---
 
-<div>
-    <PokemonList />
+<div class="bg-blue-50 min-h-screen py-8">
+    <!-- Contenedor central con Tailwind -->
+    <div class="max-w-screen-xl mx-auto px-4">
+        <h2 class="text-center text-3xl font-bold mb-6 text-red-500">
+            ¡Bienvenido al Pokémon World!
+        </h2>
+
+        <!-- Aquí solo llamamos a PokemonList que ya tiene el grid -->
+        <PokemonList client:load />
+    </div>
 </div>
