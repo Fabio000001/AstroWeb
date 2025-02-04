@@ -11,7 +11,7 @@ const PokemonList = () => {
             try {
                 const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
                 const data = await response.json();
-                console.log(data);
+                
                 if (data) setPokemon(prevPokemon => [
                     ...prevPokemon,
                     {
