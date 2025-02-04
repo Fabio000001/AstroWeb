@@ -24,10 +24,13 @@ const PokemonList = () => {
     }, [count]);
 
     return (
-        <div>
-            <h1 className="mb-6">Lista de pokemon</h1>
-            {pokemon.map(poke => { return <Pokemon key={poke.id} pokemon={poke} /> })}
-            <Counter count={count} setCount={setCount} />
+        <div className="min-h-screen bg-gray-100 py-8">
+            <div className="container mx-auto px-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {pokemon.map(poke => { return <Pokemon key={poke.id} pokemon={poke} /> })}
+                    <Counter count={count} setCount={setCount} />
+                </div>
+            </div>
         </div>
     );
 }
